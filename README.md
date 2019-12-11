@@ -35,6 +35,7 @@ A text-based interface (TUI) to view and interact with Reddit from your terminal
 
 ```bash
 $ git clone https://github.com/tildeclub/tvr.git
+$ cd tvr/
 $ python setup.py install
 ```
 

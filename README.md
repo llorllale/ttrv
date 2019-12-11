@@ -1,9 +1,5 @@
-**THIS PROJECT IS NO LONGER MAINTAINED**
-
-- [RTV Development is Shutting Down](https://github.com/michael-lazar/rtv/issues/696)
-- [List of Alternative Projects](ALTERNATIVES.md)
-
-<h1 align="center">Reddit Terminal Viewer (RTV)</h1>
+<h1 align="center">Terminal Viewer for Reddit (TVR)</h1>
+<p>Original source/development at: <a href="https://github.com/michael-lazar/rtv">RTV</p>
 
 <p align="center">
 A text-based interface (TUI) to view and interact with Reddit from your terminal.<br>
@@ -56,35 +52,6 @@ You can use *telnet* or *ssh* to try out a lite version of RTV directly in your 
 *[redditbox.us](https://redditbox.us/) is an independent project by Alex Jarmoszuk*
 
 ## Installation
-
-### PyPI package
-
-RTV is available on [PyPI](https://pypi.python.org/pypi/rtv/) and can be installed with pip:
-
-```bash
-$ pip install rtv
-```
-
-### Native packages
-
-See [Repology](https://repology.org/metapackage/rtv/packages) for an up-to-date list of supported distro packages:
-
-```bash
-# macOS
-$ brew install rtv
-
-# Arch
-$ pacman -S rtv
-
-# Nix
-$ nix-env -i rtv
-
-# Debian
-$ apt install rtv
-
-# FreeBSD
-$ pkg install rtv
-```
 
 ### From source
 

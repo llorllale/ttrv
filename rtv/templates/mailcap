@@ -1,8 +1,8 @@
-# Example mailcap file for Reddit Terminal Viewer
-# https://github.com/michael-lazar/rtv/
+# Example mailcap file for Terminal Viewer for Reddit
+# https://github.com/tildeclub/tvr/
 #
 # Copy the contents of this file to {HOME}/.mailcap, or point to it using $MAILCAPS
-# Then launch RTV using the --enable-media flag. All shell commands defined in
+# Then launch TVR using the --enable-media flag. All shell commands defined in
 # this file depend on external programs that must be installed on your system.
 #
 # HELP REQUESTED! If you come up with your own commands (especially for OS X)
@@ -19,11 +19,11 @@
 
 ###############################################################################
 # Commands below this point will open media in a separate window without
-# pausing execution of RTV.
+# pausing execution of TVR.
 ###############################################################################
 
 # Feh is a simple and effective image viewer
-# Note that rtv returns a list of urls for imgur albums, so we don't put quotes
+# Note that tvr returns a list of urls for imgur albums, so we don't put quotes
 # around the `%s`
 image/x-imgur-album; feh -g 640x480  -. %s; test=test -n "$DISPLAY"
 image/gif; mpv '%s' --autofit 640x480 --loop=inf; test=test -n "$DISPLAY"
@@ -56,10 +56,10 @@ image/x-imgur-album; echo
 # 256 color images using half-width unicode characters
 # Much higher quality that img2txt, but must be built from source
 # https://github.com/rossy/img2xterm
-image/*; curl -s '%s' | convert -resize 80x80 - jpg:/tmp/rtv.jpg && img2xterm /tmp/rtv.jpg; needsterminal; copiousoutput
+image/*; curl -s '%s' | convert -resize 80x80 - jpg:/tmp/tvr.jpg && img2xterm /tmp/tvr.jpg; needsterminal; copiousoutput
 
 # Display images in classic ascii using img2txt and lib-caca
-image/*; curl -s '%s' | convert - jpg:/tmp/rtv.jpg && img2txt -f utf8 /tmp/rtv.jpg; needsterminal; copiousoutput
+image/*; curl -s '%s' | convert - jpg:/tmp/tvr.jpg && img2txt -f utf8 /tmp/tvr.jpg; needsterminal; copiousoutput
 
 # Full motion videos - requires a framebuffer to view
 video/x-youtube; mpv -vo drm -quiet '%s'; needsterminal

@@ -5,7 +5,7 @@ import curses
 
 import pytest
 
-from rtv.subscription_page import SubscriptionPage
+from tvr.subscription_page import SubscriptionPage
 
 try:
     from unittest import mock
@@ -56,7 +56,7 @@ def test_subscription_page_construct(reddit, terminal, config, oauth,
 
 def test_subscription_refresh(subscription_page):
 
-    with mock.patch('rtv.terminal.Terminal.flash') as flash:
+    with mock.patch('tvr.terminal.Terminal.flash') as flash:
         # Refresh content - invalid order
         subscription_page.refresh_content(order='top')
         assert flash.called

@@ -8,9 +8,9 @@ from collections import OrderedDict
 import six
 import pytest
 
-from rtv import exceptions
-from rtv.packages import praw
-from rtv.content import (
+from trv import exceptions
+from trv.packages import praw
+from trv.content import (
     Content, SubmissionContent, SubredditContent, SubscriptionContent,
     RequestHeaderRateLimiter)
 
@@ -190,7 +190,7 @@ def test_content_flatten_comments_2(reddit):
 
 def test_content_flatten_comments_3(reddit):
     # Build the comment structure as described in issue
-    # https://github.com/michael-lazar/rtv/issues/327
+    # https://github.com/tildeclub/tvr/issues/327
 
     class MockComment(object):
         def __init__(self, comment_id, parent_id='t3_xxxxx'):

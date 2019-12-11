@@ -10,23 +10,23 @@ class ConfigError(Exception):
     "There was a problem with the configuration"
 
 
-class RTVError(Exception):
-    "Base RTV error class"
+class TVRError(Exception):
+    "Base TVR error class"
 
 
-class AccountError(RTVError):
+class AccountError(TVRError):
     "Could not access user account"
 
 
-class SubmissionError(RTVError):
+class SubmissionError(TVRError):
     "Submission could not be loaded"
 
 
-class SubredditError(RTVError):
+class SubredditError(TVRError):
     "Subreddit could not be loaded"
 
 
-class NoSubmissionsError(RTVError):
+class NoSubmissionsError(TVRError):
     "No submissions for the given page"
 
     def __init__(self, name):
@@ -35,29 +35,29 @@ class NoSubmissionsError(RTVError):
         super(NoSubmissionsError, self).__init__(message)
 
 
-class SubscriptionError(RTVError):
+class SubscriptionError(TVRError):
     "Content could not be fetched"
 
 
-class InboxError(RTVError):
+class InboxError(TVRError):
     "Content could not be fetched"
 
 
-class ProgramError(RTVError):
+class ProgramError(TVRError):
     "Problem executing an external program"
 
 
-class BrowserError(RTVError):
+class BrowserError(TVRError):
     "Could not open a web browser tab"
 
 
-class TemporaryFileError(RTVError):
+class TemporaryFileError(TVRError):
     "Indicates that an error has occurred and the file should not be deleted"
 
 
-class MailcapEntryNotFound(RTVError):
+class MailcapEntryNotFound(TVRError):
     "A valid mailcap entry could not be coerced from the given url"
 
 
-class InvalidRefreshToken(RTVError):
+class InvalidRefreshToken(TVRError):
     "The refresh token is corrupt and cannot be used to login"

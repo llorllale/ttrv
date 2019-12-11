@@ -5,7 +5,7 @@ import os
 import codecs
 from tempfile import NamedTemporaryFile
 
-from rtv.config import Config, copy_default_config, copy_default_mailcap
+from tvr.config import Config, copy_default_config, copy_default_mailcap
 
 try:
     from unittest import mock
@@ -17,7 +17,7 @@ def test_copy_default_config():
     """Make sure the default config file was included in the package"""
 
     with NamedTemporaryFile(suffix='.cfg') as fp:
-        with mock.patch('rtv.config.six.moves.input', return_value='y'):
+        with mock.patch('tvr.config.six.moves.input', return_value='y'):
             copy_default_config(fp.name)
             assert fp.read()
             # Check that the permissions were changed
@@ -29,7 +29,7 @@ def test_copy_default_config_cancel():
     """Pressing ``n`` should cancel the copy"""
 
     with NamedTemporaryFile(suffix='.cfg') as fp:
-        with mock.patch('rtv.config.six.moves.input', return_value='n'):
+        with mock.patch('tvr.config.six.moves.input', return_value='n'):
             copy_default_config(fp.name)
             assert not fp.read()
 
@@ -38,7 +38,7 @@ def test_copy_config_interrupt():
     """Pressing ``Ctrl-C`` should cancel the copy"""
 
     with NamedTemporaryFile(suffix='.cfg') as fp:
-        with mock.patch('rtv.config.six.moves.input') as func:
+        with mock.patch('tvr.config.six.moves.input') as func:
             func.side_effect = KeyboardInterrupt
             copy_default_config(fp.name)
             assert not fp.read()
@@ -48,7 +48,7 @@ def test_copy_default_mailcap():
     """Make sure the example mailcap file was included in the package"""
 
     with NamedTemporaryFile() as fp:
-        with mock.patch('rtv.config.six.moves.input', return_value='y'):
+        with mock.patch('tvr.config.six.moves.input', return_value='y'):
             copy_default_mailcap(fp.name)
             assert fp.read()
             # Check that the permissions were changed
@@ -79,7 +79,7 @@ def test_config_interface():
 def test_config_get_args():
     """Ensure that command line arguments are parsed properly"""
 
-    args = ['rtv',
+    args = ['tvr',
             'https://reddit.com/permalink •',
             '-s', 'cfb',
             '--log', 'logfile.log',
@@ -95,7 +95,7 @@ def test_config_get_args():
             '--no-flash',
             '--no-autologin']
 
-    with mock.patch('sys.argv', ['rtv']):
+    with mock.patch('sys.argv', ['tvr']):
         config_dict = Config.get_args()
         config = Config(**config_dict)
         assert config.config == {}
@@ -124,14 +124,14 @@ def test_config_get_args():
 def test_config_link_deprecated():
 
     # Should still be able to specify the link using the old "-l"
-    args = ['rtv', '-l', 'https://reddit.com/option']
+    args = ['tvr', '-l', 'https://reddit.com/option']
     with mock.patch('sys.argv', args):
         config_dict = Config.get_args()
         config = Config(**config_dict)
         assert config['link'] == 'https://reddit.com/option'
 
     # But the positional argument should take preference
-    args = ['rtv', 'https://reddit.com/arg', '-l', 'https://reddit.com/option']
+    args = ['tvr', 'https://reddit.com/arg', '-l', 'https://reddit.com/option']
     with mock.patch('sys.argv', args):
         config_dict = Config.get_args()
         config = Config(**config_dict)
@@ -172,9 +172,9 @@ def test_config_from_file():
         assert config.config == {}
         assert config.keymap._keymap == default_keymap
 
-        # [rtv]
+        # [tvr]
         rows = ['{0}={1}'.format(key, val) for key, val in args.items()]
-        data = '\n'.join(['[rtv]'] + rows)
+        data = '\n'.join(['[tvr]'] + rows)
         fp.write(codecs.encode(data, 'utf-8'))
 
         # [bindings]

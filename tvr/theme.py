@@ -134,10 +134,10 @@ class Theme(object):
             name (str): A unique string that describes the theme
             source (str): A string that describes the source of the theme:
                 built-in - Should only be used when Theme() is called directly
-                preset - Themes packaged with rtv
-                installed - Themes in ~/.config/rtv/themes/
+                preset - Themes packaged with tvr
+                installed - Themes in ~/.config/tvr/themes/
                 custom - When a filepath is explicitly provided, e.g.
-                    ``rtv --theme=/path/to/theme_file.cfg``
+                    ``tvr --theme=/path/to/theme_file.cfg``
             elements (dict): The theme's element map, should be in the same
                 format as Theme.DEFAULT_THEME.
         """

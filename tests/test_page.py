@@ -5,7 +5,7 @@ import curses
 
 import pytest
 
-from rtv.page import Page, PageController, logged_in
+from tvr.page import Page, PageController, logged_in
 
 try:
     from unittest import mock

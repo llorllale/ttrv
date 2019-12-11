@@ -223,7 +223,7 @@ class Terminal(object):
 
         Reddit's api sometimes chokes and double-encodes some html characters
         Praw handles the initial decoding, but we need to do a second pass
-        just to make sure. See https://github.com/michael-lazar/rtv/issues/96
+        just to make sure. See https://github.com/tildeclub/tvr/issues/96
 
         Example:
             &amp;amp; -> returned directly from reddit's api
@@ -428,10 +428,10 @@ class Terminal(object):
 
         Most urls are parsed using their file extension, but special cases
         exist for websites that are prevalent on reddit such as Imgur and
-        Gfycat. If there are no valid mailcap definitions, RTV will fall back
+        Gfycat. If there are no valid mailcap definitions, TVR will fall back
         to using the default webbrowser.
 
-        RTV checks for certain mailcap fields to determine how to open a link:
+        TVR checks for certain mailcap fields to determine how to open a link:
             - If ``copiousoutput`` is specified, the curses application will
               be paused and stdout will be piped to the system pager.
             - If `needsterminal`` is specified, the curses application will
@@ -465,7 +465,7 @@ class Terminal(object):
         copious_output = 'copiousoutput' in entry
 
         if needs_terminal or copious_output:
-            # Blocking, pause rtv until the process returns
+            # Blocking, pause tvr until the process returns
             with self.suspend():
                 os.system('clear')
                 p = subprocess.Popen(
@@ -567,7 +567,7 @@ class Terminal(object):
         http://bugs.python.org/issue22277 for a better description of the
         problem.
 
-        For console browsers (e.g. w3m), RTV will suspend and display the
+        For console browsers (e.g. w3m), TVR will suspend and display the
         browser window within the same terminal. This mode is triggered either
         when
 
@@ -587,7 +587,7 @@ class Terminal(object):
                     # This used to be done using subprocess.Popen().
                     # It was switched to multiprocessing.Process so that we
                     # can re-use the webbrowser instance that has been patched
-                    # by RTV. It's also safer because it doesn't inject
+                    # by TVR. It's also safer because it doesn't inject
                     # python code through the command line.
 
                     # Suppress stdout/stderr from the browser, see
@@ -640,14 +640,14 @@ class Terminal(object):
     def open_pager(self, data, wrap=None):
         """
         View a long block of text using an external pager / viewer.  The setting
-        of the RTV_PAGER variable will be used if set, otherwise the system's
-        default pager is chosen, finally defaulting to 'less' if both RTV_PAGER
+        of the TVR_PAGER variable will be used if set, otherwise the system's
+        default pager is chosen, finally defaulting to 'less' if both TVR_PAGER
         and PAGER is unset in the calling environment.
 
         The data string will be piped directly to the pager.
         """
 
-        pager = os.getenv('RTV_PAGER')
+        pager = os.getenv('TVR_PAGER')
         if pager is None:
             pager = os.getenv('PAGER') or 'less'
         command = shlex.split(pager)
@@ -687,7 +687,7 @@ class Terminal(object):
             text (str): The text that the user entered into the editor.
         """
 
-        with NamedTemporaryFile(prefix='rtv_', suffix='.txt', delete=False) as fp:
+        with NamedTemporaryFile(prefix='tvr_', suffix='.txt', delete=False) as fp:
             # Create a tempory file and grab the name, but close immediately so
             # we can re-open using the right encoding
             filepath = fp.name
@@ -696,7 +696,7 @@ class Terminal(object):
             fp.write(data)
         _logger.info('File created: %s', filepath)
 
-        editor = (os.getenv('RTV_EDITOR') or
+        editor = (os.getenv('TVR_EDITOR') or
                   os.getenv('VISUAL') or
                   os.getenv('EDITOR') or
                   'nano')
@@ -740,7 +740,7 @@ class Terminal(object):
         web browser.
         """
 
-        urlview = os.getenv('RTV_URLVIEWER') or 'urlview'
+        urlview = os.getenv('TVR_URLVIEWER') or 'urlview'
         command = shlex.split(urlview)
         try:
             with self.suspend():
@@ -912,7 +912,7 @@ class Terminal(object):
     @staticmethod
     def strip_instructions(text):
         """
-        Remove instructional HTML comment tags inserted by RTV.
+        Remove instructional HTML comment tags inserted by TVR.
 
         We used to use # to annotate comments, but it conflicted with the
         header tag for markdown, which some people use to format their posts.
@@ -941,8 +941,8 @@ class Terminal(object):
         work in all cases if the user sets their TERM correctly.
 
         Reference:
-            https://github.com/michael-lazar/rtv/issues/343
-            https://github.com/michael-lazar/rtv/issues/323
+            https://github.com/tildeclub/tvr/issues/343
+            https://github.com/tildeclub/tvr/issues/323
         """
 
         if self._term != 'xterm-256color':

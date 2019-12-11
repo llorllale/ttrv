@@ -3,10 +3,10 @@ Initialize an authenticated instance of PRAW to interact with.
 
 $ python -i initialize_session.py
 """
-from rtv.docs import AGENT
-from rtv.packages import praw
-from rtv.content import RequestHeaderRateLimiter
-from rtv.config import Config
+from tvr.docs import AGENT
+from tvr.packages import praw
+from tvr.content import RequestHeaderRateLimiter
+from tvr.config import Config
 
 config = Config()
 config.load_refresh_token()

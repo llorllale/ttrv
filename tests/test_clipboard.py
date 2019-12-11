@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 
 import pytest
 
-from rtv.clipboard import copy_linux, copy_osx
-from rtv.exceptions import ProgramError
+from tvr.clipboard import copy_linux, copy_osx
+from tvr.exceptions import ProgramError
 
 
 try:

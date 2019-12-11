@@ -15,15 +15,15 @@ from collections import Counter
 from vcr import VCR
 from six.moves.urllib.parse import urlparse, parse_qs
 
-from rtv.theme import Theme, ThemeList
-from rtv.config import Config
-from rtv.packages import praw
-from rtv.oauth import OAuthHelper
-from rtv.terminal import Terminal
-from rtv.objects import curses_session
-from rtv.subreddit_page import SubredditPage
-from rtv.submission_page import SubmissionPage
-from rtv.subscription_page import SubscriptionPage
+from tvr.theme import Theme, ThemeList
+from tvr.config import Config
+from tvr.packages import praw
+from tvr.oauth import OAuthHelper
+from tvr.terminal import Terminal
+from tvr.objects import curses_session
+from tvr.subreddit_page import SubredditPage
+from tvr.submission_page import SubmissionPage
+from tvr.subscription_page import SubscriptionPage
 
 try:
     from unittest import mock
@@ -230,7 +230,7 @@ def main():
         else:
             config.refresh_token = 'mock_refresh_token'
 
-        reddit = praw.Reddit(user_agent='RTV Theme Demo',
+        reddit = praw.Reddit(user_agent='TVR Theme Demo',
                              decode_html_entities=False,
                              disable_update_check=True)
         reddit.config.api_request_delay = 0

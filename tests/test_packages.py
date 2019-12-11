@@ -1,4 +1,4 @@
-from rtv import packages
+from tvr import packages
 
 
 def test_praw3_package():

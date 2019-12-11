@@ -13,7 +13,7 @@ import warnings
 import six
 import requests
 
-# Need to check for curses compatibility before performing the rtv imports
+# Need to check for curses compatibility before performing the trv imports
 try:
     import curses
 except ImportError:
@@ -28,9 +28,9 @@ except ImportError:
 # references, it needs to be done before the webbrowser module is imported
 # for the first time.
 webbrowser_import_warning = ('webbrowser' in sys.modules)
-RTV_BROWSER, BROWSER = os.environ.get('RTV_BROWSER'), os.environ.get('BROWSER')
-if RTV_BROWSER:
-    os.environ['BROWSER'] = RTV_BROWSER
+TVR_BROWSER, BROWSER = os.environ.get('TVR_BROWSER'), os.environ.get('BROWSER')
+if TVR_BROWSER:
+    os.environ['BROWSER'] = TVR_BROWSER
 
 from . import docs
 from . import packages
@@ -50,8 +50,8 @@ _logger = logging.getLogger(__name__)
 
 
 # Pycharm debugging note:
-# You can use pycharm to debug a curses application by launching rtv in a
-# console window (python -m rtv) and using pycharm to attach to the remote
+# You can use pycharm to debug a curses application by launching tvr in a
+# console window (python -m tvr) and using pycharm to attach to the remote
 # process. On Ubuntu, you may need to allow ptrace permissions by setting
 # ptrace_scope to 0 in /etc/sysctl.d/10-ptrace.conf.
 # http://blog.mellenthin.de/archives/2010/10/18/gdb-attach-fails
@@ -68,7 +68,7 @@ def main():
 
     # Set the terminal title
     if os.getenv('DISPLAY'):
-        title = 'rtv {0}'.format(__version__)
+        title = 'tvr {0}'.format(__version__)
         sys.stdout.write('\x1b]2;{0}\x07'.format(title))
         sys.stdout.flush()
 
@@ -150,8 +150,8 @@ def main():
     user_agent = docs.AGENT.format(version=__version__)
 
     debug_info = [
-        'rtv version: rtv {}'.format(__version__),
-        'rtv module path: {}'.format(os.path.abspath(__file__)),
+        'tvr version: tvr {}'.format(__version__),
+        'tvr module path: {}'.format(os.path.abspath(__file__)),
         'python version: {}'.format(sys.version.replace('\n', ' ')),
         'python executable: {}'.format(sys.executable),
         'praw version: {}'.format(praw_info),
@@ -163,10 +163,10 @@ def main():
         ('EDITOR', os.getenv('EDITOR')),
         ('LANG', os.getenv('LANG')),
         ('PAGER', os.getenv('PAGER')),
-        ('RTV_BROWSER', RTV_BROWSER),
-        ('RTV_EDITOR', os.getenv('RTV_EDITOR')),
-        ('RTV_PAGER', os.getenv('RTV_PAGER')),
-        ('RTV_URLVIEWER', os.getenv('RTV_URLVIEWER')),
+        ('TVR_BROWSER', TVR_BROWSER),
+        ('TVR_EDITOR', os.getenv('TVR_EDITOR')),
+        ('TVR_PAGER', os.getenv('TVR_PAGER')),
+        ('TVR_URLVIEWER', os.getenv('TVR_URLVIEWER')),
         ('TERM', os.getenv('TERM')),
         ('VISUAL', os.getenv('VISUAL')),
         ('XDG_CONFIG_HOME', os.getenv('XDG_CONFIG_HOME')),
@@ -263,8 +263,8 @@ def main():
         exit_message = '\n'.join([
             debug_text,
             traceback.format_exc(),
-            'rtv has crashed. Please report this traceback at:',
-            'https://github.com/michael-lazar/rtv/issues\n'])
+            'tvr has crashed. Please report this traceback at:',
+            'https://github.com/tildeclub/tvr/issues\n'])
         sys.stderr.write(exit_message)
         return 1  # General error exception code
     except KeyboardInterrupt:

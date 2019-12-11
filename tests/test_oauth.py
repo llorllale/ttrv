@@ -3,9 +3,9 @@ from __future__ import unicode_literals
 
 import requests
 
-from rtv.oauth import OAuthHelper, OAuthHandler
-from rtv.exceptions import InvalidRefreshToken
-from rtv.packages.praw.errors import OAuthException
+from tvr.oauth import OAuthHelper, OAuthHandler
+from tvr.exceptions import InvalidRefreshToken
+from tvr.packages.praw.errors import OAuthException
 
 
 try:
@@ -128,8 +128,8 @@ def test_oauth_authorize(oauth, reddit, stdscr, refresh_token):
     # Because we use `from .helpers import open_browser` we have to patch the
     # function in the destination oauth module and not the helpers module
     with mock.patch('uuid.UUID.hex', new_callable=mock.PropertyMock) as uuid, \
-            mock.patch('rtv.terminal.Terminal.open_browser') as open_browser, \
-            mock.patch('rtv.oauth.OAuthHTTPServer') as http_server,           \
+            mock.patch('tvr.terminal.Terminal.open_browser') as open_browser, \
+            mock.patch('tvr.oauth.OAuthHTTPServer') as http_server,           \
             mock.patch.object(oauth.reddit, 'user'),                          \
             mock.patch('time.sleep'):
 

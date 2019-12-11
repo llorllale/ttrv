@@ -1,45 +1,45 @@
 =============
-RTV Changelog
+TVR Changelog
 =============
 
-.. _1.27.0: http://github.com/michael-lazar/rtv/releases/tag/v1.27.0
-.. _1.26.0: http://github.com/michael-lazar/rtv/releases/tag/v1.26.0
-.. _1.25.1: http://github.com/michael-lazar/rtv/releases/tag/v1.25.1
-.. _1.25.0: http://github.com/michael-lazar/rtv/releases/tag/v1.25.0
-.. _1.24.0: http://github.com/michael-lazar/rtv/releases/tag/v1.24.0
-.. _1.23.0: http://github.com/michael-lazar/rtv/releases/tag/v1.23.0
-.. _1.22.1: http://github.com/michael-lazar/rtv/releases/tag/v1.22.1
-.. _1.22.0: http://github.com/michael-lazar/rtv/releases/tag/v1.22.0
-.. _1.21.0: http://github.com/michael-lazar/rtv/releases/tag/v1.21.0
-.. _1.20.0: http://github.com/michael-lazar/rtv/releases/tag/v1.20.0
-.. _1.19.0: http://github.com/michael-lazar/rtv/releases/tag/v1.19.0
-.. _1.18.0: http://github.com/michael-lazar/rtv/releases/tag/v1.18.0
-.. _1.17.1: http://github.com/michael-lazar/rtv/releases/tag/v1.17.1
-.. _1.17.0: http://github.com/michael-lazar/rtv/releases/tag/v1.17.0
-.. _1.16.0: http://github.com/michael-lazar/rtv/releases/tag/v1.16.0
-.. _1.15.1: http://github.com/michael-lazar/rtv/releases/tag/v1.15.1
-.. _1.15.0: http://github.com/michael-lazar/rtv/releases/tag/v1.15.0
-.. _1.14.1: http://github.com/michael-lazar/rtv/releases/tag/v1.14.1
-.. _1.13.0: http://github.com/michael-lazar/rtv/releases/tag/v1.13.0
-.. _1.12.1: http://github.com/michael-lazar/rtv/releases/tag/v1.12.1
-.. _1.12.0: http://github.com/michael-lazar/rtv/releases/tag/v1.12.0
-.. _1.11.0: http://github.com/michael-lazar/rtv/releases/tag/v1.11.0
-.. _1.10.0: http://github.com/michael-lazar/rtv/releases/tag/v1.10.0
-.. _1.9.1: http://github.com/michael-lazar/rtv/releases/tag/v1.9.1
-.. _1.9.0: http://github.com/michael-lazar/rtv/releases/tag/v1.9.0
-.. _1.8.1: http://github.com/michael-lazar/rtv/releases/tag/v1.8.1
-.. _1.8.0: http://github.com/michael-lazar/rtv/releases/tag/v1.8.0
-.. _1.7.0: http://github.com/michael-lazar/rtv/releases/tag/v1.7.0
-.. _1.6.1: http://github.com/michael-lazar/rtv/releases/tag/v1.6.1
-.. _1.6: http://github.com/michael-lazar/rtv/releases/tag/v1.6
-.. _1.5: http://github.com/michael-lazar/rtv/releases/tag/v1.5
-.. _1.4.2: http://github.com/michael-lazar/rtv/releases/tag/v1.4.2
-.. _1.4.1: http://github.com/michael-lazar/rtv/releases/tag/v1.4.1
-.. _1.4: http://github.com/michael-lazar/rtv/releases/tag/v1.4
-.. _1.3: http://github.com/michael-lazar/rtv/releases/tag/v1.3
-.. _1.2.2: http://github.com/michael-lazar/rtv/releases/tag/v1.2.2
-.. _1.2.1: http://github.com/michael-lazar/rtv/releases/tag/v1.2.1
-.. _1.2: http://github.com/michael-lazar/rtv/releases/tag/v1.2
+.. _1.27.0: https://github.com/tildeclub/tvr/releases/tag/v1.27.0
+.. _1.26.0: https://github.com/tildeclub/tvr/releases/tag/v1.26.0
+.. _1.25.1: https://github.com/tildeclub/tvr/releases/tag/v1.25.1
+.. _1.25.0: https://github.com/tildeclub/tvr/releases/tag/v1.25.0
+.. _1.24.0: https://github.com/tildeclub/tvr/releases/tag/v1.24.0
+.. _1.23.0: https://github.com/tildeclub/tvr/releases/tag/v1.23.0
+.. _1.22.1: https://github.com/tildeclub/tvr/releases/tag/v1.22.1
+.. _1.22.0: https://github.com/tildeclub/tvr/releases/tag/v1.22.0
+.. _1.21.0: https://github.com/tildeclub/tvr/releases/tag/v1.21.0
+.. _1.20.0: https://github.com/tildeclub/tvr/releases/tag/v1.20.0
+.. _1.19.0: https://github.com/tildeclub/tvr/releases/tag/v1.19.0
+.. _1.18.0: https://github.com/tildeclub/tvr/releases/tag/v1.18.0
+.. _1.17.1: https://github.com/tildeclub/tvr/releases/tag/v1.17.1
+.. _1.17.0: https://github.com/tildeclub/tvr/releases/tag/v1.17.0
+.. _1.16.0: https://github.com/tildeclub/tvr/releases/tag/v1.16.0
+.. _1.15.1: https://github.com/tildeclub/tvr/releases/tag/v1.15.1
+.. _1.15.0: https://github.com/tildeclub/tvr/releases/tag/v1.15.0
+.. _1.14.1: https://github.com/tildeclub/tvr/releases/tag/v1.14.1
+.. _1.13.0: https://github.com/tildeclub/tvr/releases/tag/v1.13.0
+.. _1.12.1: https://github.com/tildeclub/tvr/releases/tag/v1.12.1
+.. _1.12.0: https://github.com/tildeclub/tvr/releases/tag/v1.12.0
+.. _1.11.0: https://github.com/tildeclub/tvr/releases/tag/v1.11.0
+.. _1.10.0: https://github.com/tildeclub/tvr/releases/tag/v1.10.0
+.. _1.9.1: https://github.com/tildeclub/tvr/releases/tag/v1.9.1
+.. _1.9.0: https://github.com/tildeclub/tvr/releases/tag/v1.9.0
+.. _1.8.1: https://github.com/tildeclub/tvr/releases/tag/v1.8.1
+.. _1.8.0: https://github.com/tildeclub/tvr/releases/tag/v1.8.0
+.. _1.7.0: https://github.com/tildeclub/tvr/releases/tag/v1.7.0
+.. _1.6.1: https://github.com/tildeclub/tvr/releases/tag/v1.6.1
+.. _1.6: https://github.com/tildeclub/tvr/releases/tag/v1.6
+.. _1.5: https://github.com/tildeclub/tvr/releases/tag/v1.5
+.. _1.4.2: https://github.com/tildeclub/tvr/releases/tag/v1.4.2
+.. _1.4.1: https://github.com/tildeclub/tvr/releases/tag/v1.4.1
+.. _1.4: https://github.com/tildeclub/tvr/releases/tag/v1.4
+.. _1.3: https://github.com/tildeclub/tvr/releases/tag/v1.3
+.. _1.2.2: https://github.com/tildeclub/tvr/releases/tag/v1.2.2
+.. _1.2.1: https://github.com/tildeclub/tvr/releases/tag/v1.2.1
+.. _1.2: https://github.com/tildeclub/tvr/releases/tag/v1.2
 
 --------------------
 1.27.0_ (2019-06-02)

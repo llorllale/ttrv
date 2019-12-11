@@ -202,9 +202,9 @@ class ImgurApiMIMEParser(BaseMIMEParser):
     page has an associated hash and can either contain an album, a gallery,
     or single image.
 
-    The default client token for RTV is shared among users and allows a maximum
+    The default client token for TVR is shared among users and allows a maximum
     global number of requests per day of 12,500. If we find that this limit is
-    not sufficient for all of rtv's traffic, this method will be revisited.
+    not sufficient for all of tvr's traffic, this method will be revisited.
 
     Reference:
         https://apidocs.imgur.com

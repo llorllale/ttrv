@@ -8,7 +8,7 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['122']
       Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [RTV Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
+      User-Agent: [TVR Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
     method: POST
     uri: https://api.reddit.com/api/v1/access_token/
   response:
@@ -49,7 +49,7 @@ interactions:
       Accept-Encoding: ['gzip, deflate']
       Authorization: ['**********']
       Connection: [keep-alive]
-      User-Agent: [RTV Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
+      User-Agent: [TVR Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
     method: GET
     uri: https://oauth.reddit.com/api/v1/me.json
   response:
@@ -121,7 +121,7 @@ interactions:
       Authorization: ['**********']
       Connection: [keep-alive]
       Cookie: [edgebucket=FCaLeYpsJ64Y4b61zH; session_tracker=EsHcNvrMDzIw7rl10k.0.1499406744791.Z0FBQUFBQlpYeUdZbllUSU1OcEdvaHd2V0tGOUlRUzVVNWRqVUtVeUFKSkxIV0t5Yk5sQWFyczJTSk9tWDRBbnJyd2t4alkxZzR5elZOMTBZeWp4UWRnUnctMTdOaE1pSDIyTHhsUGJCS1pvM2hlX0xUN0M0U0FKeGtEM3YwWFNVMFYyOC1yMk55YUs]
-      User-Agent: [RTV Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
+      User-Agent: [TVR Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
     method: GET
     uri: https://oauth.reddit.com/user/civilization_phaze_3/saved.json?sort=new&t=all&limit=1024
   response:
@@ -236,7 +236,7 @@ interactions:
       Connection: [keep-alive]
       Cookie: [edgebucket=FCaLeYpsJ64Y4b61zH; session_tracker=EsHcNvrMDzIw7rl10k.0.1499406746608.Z0FBQUFBQlpYeUdhYmFhMjY0QlJLRm1kLUlRWGl4RWZRVHZIcWZhcWZNSWlZeHhoLVp4eUc0S0MzcXk2QmxEWlJIWU9NbEtHUHJaN2pWQ2RuczlBMnoyOXp6WDJRX3JTY3pLdTU3cG5YdEpCcmx6XzdqVHRxZTJNRG1oY0h0LUdpdUQ4cFVJTXI3UzE;
           loid=0000000000000lqnao.2.1425202840186.Z0FBQUFBQlpYeUdhdHFFRkJMVXZTQ1hoYUdjNGI4SHhGSG9NemY2bElIQUZqTjZCRFBjVkJQMnpQdHcxS2dyd1hjWWh2QllvQmg1ZWVrUlhYVG5mMW41S1FaNXJoTFRyc1hpUVpWWHNZU21TWmM5Tnd1QUJyTmcyM0dOaWFIc3VEYlU5X05WNF9wMW0]
-      User-Agent: [RTV Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
+      User-Agent: [TVR Theme Demo PRAW/3.6.1 Python/3.6.1 b'Darwin-14.5.0-x86_64-i386-64bit']
     method: GET
     uri: https://oauth.reddit.com/subreddits/popular/.json?limit=1024
   response:

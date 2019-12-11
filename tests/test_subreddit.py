@@ -7,9 +7,9 @@ from collections import OrderedDict
 import six
 import pytest
 
-from rtv import __version__
-from rtv.subreddit_page import SubredditPage
-from rtv.packages.praw.errors import NotFound, HTTPException
+from tvr import __version__
+from tvr.subreddit_page import SubredditPage
+from tvr.packages.praw.errors import NotFound, HTTPException
 from requests.exceptions import ReadTimeout
 
 try:
@@ -103,13 +103,13 @@ def test_subreddit_title(subreddit_page, terminal, capsys):
         subreddit_page.draw()
         out, _ = capsys.readouterr()
         assert isinstance(out, six.text_type)
-        assert out == '\x1b]2;hello ? - rtv {}\x07'.format(__version__)
+        assert out == '\x1b]2;hello ? - tvr {}\x07'.format(__version__)
 
         terminal.config['ascii'] = False
         subreddit_page.draw()
         out, _ = capsys.readouterr()
         assert isinstance(out, six.text_type)
-        assert out == '\x1b]2;hello ❤ - rtv {}\x07'.format(__version__)
+        assert out == '\x1b]2;hello ❤ - tvr {}\x07'.format(__version__)
 
     with mock.patch.dict('os.environ', {'DISPLAY': ''}):
         subreddit_page.draw()
@@ -313,7 +313,7 @@ def test_subreddit_open(subreddit_page, terminal, config):
         assert terminal.open_link.called
         config.history.add.assert_called_with(data['url_full'])
 
-    # Open the selected link within rtv
+    # Open the selected link within tvr
     data = subreddit_page.content.get(subreddit_page.nav.absolute_index)
     with mock.patch.object(subreddit_page, 'open_submission'), \
             mock.patch.object(config.history, 'add'):
@@ -404,7 +404,7 @@ def test_subreddit_open_subscriptions(subreddit_page, refresh_token):
     assert subreddit_page.selected_page
     assert subreddit_page.active
 
-    with mock.patch('rtv.page.Page.loop') as loop:
+    with mock.patch('tvr.page.Page.loop') as loop:
         subreddit_page.handle_selected_page()
         assert loop.called
 
@@ -435,7 +435,7 @@ def test_subreddit_open_multireddits(subreddit_page, refresh_token):
     assert subreddit_page.selected_page
     assert subreddit_page.active
 
-    with mock.patch('rtv.page.Page.loop') as loop:
+    with mock.patch('tvr.page.Page.loop') as loop:
         subreddit_page.handle_selected_page()
         assert loop.called
 

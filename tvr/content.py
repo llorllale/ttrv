@@ -1041,7 +1041,7 @@ class RequestHeaderRateLimiter(DefaultHandler):
 
         # In PRAW's convention, these variables were bound to the
         # class so the cache could be shared among all of the ``reddit``
-        # instances. In RTV's use-case there is only ever a single reddit
+        # instances. In TRV's use-case there is only ever a single reddit
         # instance so it made sense to clean up the globals and transfer them
         # to method variables
         self.cache = {}
@@ -1150,7 +1150,7 @@ class RequestHeaderRateLimiter(DefaultHandler):
             _cache_key = (url, (items[0], items[1], items[3], items[4]))
 
         if kwargs['request'].method != 'GET':
-            # I added this check for RTV, I have no idea why PRAW would ever
+            # I added this check for TVR, I have no idea why PRAW would ever
             # want to cache POST/PUT/DELETE requests
             _cache_ignore = True
 

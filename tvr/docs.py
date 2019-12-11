@@ -2,19 +2,19 @@
 from __future__ import unicode_literals
 
 AGENT = """\
-desktop:https://github.com/michael-lazar/rtv:{version}\
+desktop:https://github.com/tildeclub/tvr:{version}\
 (by /u/civilization_phaze_3)\
 """
 
 SUMMARY = """
-RTV (Reddit Terminal Viewer) is a terminal interface to view and interact with reddit.
+TVR (Terminal Viewer Reddit) is a terminal interface to view and interact with reddit.
 """
 
 USAGE = """\
-rtv [URL] [-s SUBREDDIT]
+tvr [URL] [-s SUBREDDIT]
 
-  $ rtv https://www.reddit.com/r/programming/comments/7h9l31
-  $ rtv -s linux
+  $ tvr https://www.reddit.com/r/programming/comments/7h9l31
+  $ tvr -s linux
 """
 
 CONTROLS = """
@@ -26,7 +26,7 @@ HELP = """\
 ====================================
 Reddit Terminal Viewer
 
-https://github.com/michael-lazar/rtv
+https://github.com/tildeclub/tvr
 ====================================
 
 [Basic Commands]

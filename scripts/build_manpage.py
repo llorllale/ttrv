@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Internal tool used to automatically generate an up-to-date version of the rtv
+Internal tool used to automatically generate an up-to-date version of the tvr
 man page. Currently this script should be manually ran after each version bump.
 In the future, it would be nice to have this functionality built into setup.py.
 
@@ -17,8 +17,8 @@ _filepath = os.path.dirname(os.path.relpath(__file__))
 ROOT = os.path.abspath(os.path.join(_filepath, '..'))
 sys.path.insert(0, ROOT)
 
-import rtv
-from rtv import config
+import tvr
+from tvr import config
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
 
     data = {}
     print('Fetching version')
-    data['version'] = rtv.__version__
+    data['version'] = tvr.__version__
     print('Fetching release date')
     data['release_date'] = datetime.utcnow().strftime('%B %d, %Y')
     print('Fetching synopsis')
@@ -65,18 +65,18 @@ def main():
         options += '\n'.join(('.TP', flag, description, '\n'))
     data['options'] = options
     print('Fetching license')
-    data['license'] = rtv.__license__
+    data['license'] = tvr.__license__
     print('Fetching copyright')
-    data['copyright'] = rtv.__copyright__
+    data['copyright'] = tvr.__copyright__
     # Escape dashes is all of the sections
     data = {k: v.replace('-', r'\-') for k, v in data.items()}
-    print('Reading from %s/scripts/rtv.1.template' % ROOT)
-    with open(os.path.join(ROOT, 'scripts/rtv.1.template')) as fp:
+    print('Reading from %s/scripts/tvr.1.template' % ROOT)
+    with open(os.path.join(ROOT, 'scripts/tvr.1.template')) as fp:
         template = fp.read()
     print('Populating template')
     out = template.format(**data)
-    print('Writing to %s/rtv.1' % ROOT)
-    with open(os.path.join(ROOT, 'rtv.1'), 'w') as fp:
+    print('Writing to %s/tvr.1' % ROOT)
+    with open(os.path.join(ROOT, 'tvr.1'), 'w') as fp:
         fp.write(out)
 
 

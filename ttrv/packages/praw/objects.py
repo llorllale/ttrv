@@ -120,7 +120,7 @@ class RedditContentObject(object):
             # will unfortunately break PRAW because permalink is a @property on the
             # Comment object. I need to investigate if the property can be removed,
             # for now this is a quick hack to get things working again.
-            #     https://github.com/tildeclub/tvr/issues/462
+            #     https://github.com/tildeclub/ttrv/issues/462
             return
         elif value and name in REDDITOR_KEYS:
             if isinstance(value, bool):

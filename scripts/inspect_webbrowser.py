@@ -11,11 +11,11 @@ os.environ['BROWSER'] = 'firefox'
 # If we want to override the $BROWSER variable that the python webbrowser
 # references, it needs to be done before the webbrowser module is imported
 # for the first time.
-TVR_BROWSER, BROWSER = os.environ.get('TVR_BROWSER'), os.environ.get('BROWSER')
-if TVR_BROWSER:
-    os.environ['BROWSER'] = TVR_BROWSER
+TTRV_BROWSER, BROWSER = os.environ.get('TTRV_BROWSER'), os.environ.get('BROWSER')
+if TTRV_BROWSER:
+    os.environ['BROWSER'] = TTRV_BROWSER
 
-print('TVR_BROWSER=%s' % TVR_BROWSER)
+print('TTRV_BROWSER=%s' % TTRV_BROWSER)
 print('BROWSER=%s' % BROWSER)
 
 import webbrowser

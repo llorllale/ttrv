@@ -3,6 +3,6 @@ include CHANGELOG.rst
 include AUTHORS.rst
 include README.md
 include LICENSE
-include tvr.1
-include tvr/templates/*
-include tvr/themes/*
+include ttrv.1
+include ttrv/templates/*
+include ttrv/themes/*

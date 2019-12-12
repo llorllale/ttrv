@@ -9,7 +9,7 @@ install_requires = [
     'beautifulsoup4',
     'decorator',
     'kitchen',
-    'requests >=2.4.0',  # https://github.com/tildeclub/tvr/issues/325
+    'requests >=2.4.0',  # https://github.com/tildeclub/ttrv/issues/325
     'six',
 ]
 
@@ -44,30 +44,30 @@ def long_description():
 
 
 setuptools.setup(
-    name='tvr',
+    name='ttrv',
     version=version,
     description='A simple terminal viewer for Reddit (Terminal Viewer for Reddit)',
     long_description=long_description(),
     long_description_content_type='text/markdown',
-    url='https://github.com/tildeclub/tvr',
+    url='https://github.com/tildeclub/ttrv',
     author='Michael Lazar',
     author_email='deepend@tilde.club',
     license='MIT',
     keywords='reddit terminal praw curses',
     packages=[
-        'tvr',
-        'tvr.packages',
-        'tvr.packages.praw'
+        'ttrv',
+        'ttrv.packages',
+        'ttrv.packages.praw'
     ],
     package_data={
-        'tvr': ['templates/*', 'themes/*'],
-        'tvr.packages.praw': ['praw.ini']
+        'ttrv': ['templates/*', 'themes/*'],
+        'ttrv.packages.praw': ['praw.ini']
     },
-    data_files=[("share/man/man1", ["tvr.1"])],
+    data_files=[("share/man/man1", ["ttrv.1"])],
     install_requires=install_requires,
     tests_require=tests_require,
     extras_require=extras_require,
-    entry_points={'console_scripts': ['tvr=tvr.__main__:main']},
+    entry_points={'console_scripts': ['ttrv=ttrv.__main__:main']},
     classifiers=[
         'Intended Audience :: End Users/Desktop',
         'Environment :: Console :: Curses',

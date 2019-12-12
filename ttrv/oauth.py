@@ -167,7 +167,7 @@ class OAuthHelper(object):
                 else:
                     if not autologin:
                         # Only show the welcome message if explicitly logging
-                        # in, not when TVR first launches.
+                        # in, not when TTRV first launches.
                         message = 'Welcome {}!'.format(self.reddit.user.name)
                         self.term.show_notification(message)
 

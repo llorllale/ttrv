@@ -1150,7 +1150,7 @@ class RequestHeaderRateLimiter(DefaultHandler):
             _cache_key = (url, (items[0], items[1], items[3], items[4]))
 
         if kwargs['request'].method != 'GET':
-            # I added this check for TVR, I have no idea why PRAW would ever
+            # I added this check for TTRV, I have no idea why PRAW would ever
             # want to cache POST/PUT/DELETE requests
             _cache_ignore = True
 

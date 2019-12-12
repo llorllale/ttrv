@@ -16,21 +16,21 @@ from .objects import KeyMap
 PACKAGE = os.path.dirname(__file__)
 HOME = os.path.expanduser('~')
 TEMPLATES = os.path.join(PACKAGE, 'templates')
-DEFAULT_CONFIG = os.path.join(TEMPLATES, 'tvr.cfg')
+DEFAULT_CONFIG = os.path.join(TEMPLATES, 'ttrv.cfg')
 DEFAULT_MAILCAP = os.path.join(TEMPLATES, 'mailcap')
 DEFAULT_THEMES = os.path.join(PACKAGE, 'themes')
 XDG_CONFIG_HOME = os.getenv('XDG_CONFIG_HOME', os.path.join(HOME, '.config'))
 XDG_DATA_HOME = os.getenv('XDG_DATA_HOME', os.path.join(HOME, '.local', 'share'))
-CONFIG = os.path.join(XDG_CONFIG_HOME, 'tvr', 'tvr.cfg')
+CONFIG = os.path.join(XDG_CONFIG_HOME, 'ttrv', 'ttrv.cfg')
 MAILCAP = os.path.join(HOME, '.mailcap')
-TOKEN = os.path.join(XDG_DATA_HOME, 'tvr', 'refresh-token')
-HISTORY = os.path.join(XDG_DATA_HOME, 'tvr', 'history.log')
-THEMES = os.path.join(XDG_CONFIG_HOME, 'tvr', 'themes')
+TOKEN = os.path.join(XDG_DATA_HOME, 'ttrv', 'refresh-token')
+HISTORY = os.path.join(XDG_DATA_HOME, 'ttrv', 'history.log')
+THEMES = os.path.join(XDG_CONFIG_HOME, 'ttrv', 'themes')
 
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        prog='tvr', description=docs.SUMMARY,
+        prog='ttrv', description=docs.SUMMARY,
         epilog=docs.CONTROLS,
         usage=docs.USAGE,
         formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -72,7 +72,7 @@ def build_parser():
         help='Remove any saved user data before launching')
     parser.add_argument(
         '--copy-config', dest='copy_config', action='store_const', const=True,
-        help='Copy the default configuration to {HOME}/.config/tvr/tvr.cfg')
+        help='Copy the default configuration to {HOME}/.config/ttrv/ttrv.cfg')
     parser.add_argument(
         '--copy-mailcap', dest='copy_mailcap', action='store_const', const=True,
         help='Copy an example mailcap configuration to {HOME}/.mailcap')
@@ -80,7 +80,7 @@ def build_parser():
         '--enable-media', dest='enable_media', action='store_const', const=True,
         help='Open external links using programs defined in the mailcap config')
     parser.add_argument(
-        '-V', '--version', action='version', version='tvr ' + __version__)
+        '-V', '--version', action='version', version='ttrv ' + __version__)
     parser.add_argument(
         '--no-flash', dest='flash', action='store_const', const=False,
         help='Disable screen flashing')
@@ -99,7 +99,7 @@ def copy_default_mailcap(filename=MAILCAP):
 
 def copy_default_config(filename=CONFIG):
     """
-    Copy the default tvr user configuration to the specified file.
+    Copy the default ttrv user configuration to the specified file.
     """
     return _copy_settings_file(DEFAULT_CONFIG, filename, 'config')
 
@@ -241,7 +241,7 @@ class Config(object):
     @classmethod
     def get_file(cls, filename=None):
         """
-        Load settings from an tvr configuration file.
+        Load settings from an ttrv configuration file.
         """
 
         if filename is None:
@@ -252,36 +252,36 @@ class Config(object):
             with codecs.open(filename, encoding='utf-8') as fp:
                 config.readfp(fp)
 
-        return cls._parse_tvr_file(config)
+        return cls._parse_ttrv_file(config)
 
     @staticmethod
-    def _parse_tvr_file(config):
+    def _parse_ttrv_file(config):
 
-        tvr = {}
-        if config.has_section('tvr'):
-            tvr = dict(config.items('tvr'))
+        ttrv = {}
+        if config.has_section('ttrv'):
+            ttrv = dict(config.items('ttrv'))
 
         # convert non-string params to their typed representation
         params = {
-            'ascii': partial(config.getboolean, 'tvr'),
-            'monochrome': partial(config.getboolean, 'tvr'),
-            'persistent': partial(config.getboolean, 'tvr'),
-            'autologin': partial(config.getboolean, 'tvr'),
-            'clear_auth': partial(config.getboolean, 'tvr'),
-            'enable_media': partial(config.getboolean, 'tvr'),
-            'history_size': partial(config.getint, 'tvr'),
-            'oauth_redirect_port': partial(config.getint, 'tvr'),
-            'oauth_scope': lambda x: tvr[x].split(','),
-            'max_comment_cols': partial(config.getint, 'tvr'),
-            'max_pager_cols': partial(config.getint, 'tvr'),
-            'hide_username': partial(config.getboolean, 'tvr'),
-            'flash': partial(config.getboolean, 'tvr'),
-            'force_new_browser_window': partial(config.getboolean, 'tvr')
+            'ascii': partial(config.getboolean, 'ttrv'),
+            'monochrome': partial(config.getboolean, 'ttrv'),
+            'persistent': partial(config.getboolean, 'ttrv'),
+            'autologin': partial(config.getboolean, 'ttrv'),
+            'clear_auth': partial(config.getboolean, 'ttrv'),
+            'enable_media': partial(config.getboolean, 'ttrv'),
+            'history_size': partial(config.getint, 'ttrv'),
+            'oauth_redirect_port': partial(config.getint, 'ttrv'),
+            'oauth_scope': lambda x: ttrv[x].split(','),
+            'max_comment_cols': partial(config.getint, 'ttrv'),
+            'max_pager_cols': partial(config.getint, 'ttrv'),
+            'hide_username': partial(config.getboolean, 'ttrv'),
+            'flash': partial(config.getboolean, 'ttrv'),
+            'force_new_browser_window': partial(config.getboolean, 'ttrv')
         }
 
         for key, func in params.items():
-            if key in tvr:
-                tvr[key] = func(key)
+            if key in ttrv:
+                ttrv[key] = func(key)
 
         bindings = {}
         if config.has_section('bindings'):
@@ -290,7 +290,7 @@ class Config(object):
         for name, keys in bindings.items():
             bindings[name] = [key.strip() for key in keys.split(',')]
 
-        return tvr, bindings
+        return ttrv, bindings
 
     @staticmethod
     def _ensure_filepath(filename):

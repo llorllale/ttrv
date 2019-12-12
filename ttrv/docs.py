@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 AGENT = """\
-desktop:https://github.com/tildeclub/tvr:{version}\
+desktop:https://github.com/tildeclub/ttrv:{version}\
 (by /u/civilization_phaze_3)\
 """
 
@@ -11,10 +11,10 @@ TVR (Terminal Viewer Reddit) is a terminal interface to view and interact with r
 """
 
 USAGE = """\
-tvr [URL] [-s SUBREDDIT]
+ttrv [URL] [-s SUBREDDIT]
 
-  $ tvr https://www.reddit.com/r/programming/comments/7h9l31
-  $ tvr -s linux
+  $ ttrv https://www.reddit.com/r/programming/comments/7h9l31
+  $ ttrv -s linux
 """
 
 CONTROLS = """
@@ -26,7 +26,7 @@ HELP = """\
 ====================================
 Reddit Terminal Viewer
 
-https://github.com/tildeclub/tvr
+https://github.com/tildeclub/ttrv
 ====================================
 
 [Basic Commands]

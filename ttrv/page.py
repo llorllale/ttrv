@@ -719,7 +719,7 @@ class Page(object):
         # Setting the terminal title will break emacs or systems without
         # X window.
         if os.getenv('DISPLAY') and not os.getenv('INSIDE_EMACS'):
-            title += ' - tvr {0}'.format(__version__)
+            title += ' - ttrv {0}'.format(__version__)
             title = self.term.clean(title)
             if six.PY3:
                 # In py3 you can't write bytes to stdout

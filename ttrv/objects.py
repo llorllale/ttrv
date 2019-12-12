@@ -32,7 +32,7 @@ def patch_webbrowser():
     """
 
     # https://bugs.python.org/issue31014
-    # https://github.com/michael-lazar/tvr/issues/588
+    # https://github.com/michael-lazar/ttrv/issues/588
     def register_patch(name, klass, instance=None, update_tryorder=None, preferred=False):
         """
         Wrapper around webbrowser.register() that detects if the function was
@@ -57,7 +57,7 @@ def patch_webbrowser():
     webbrowser.register('vimb', None, webbrowser.BackgroundBrowser('vimb'))
     webbrowser.register('qutebrowser', None, webbrowser.BackgroundBrowser('qutebrowser'))
 
-    # Fix the opera browser, see https://github.com/michael-lazar/tvr/issues/476.
+    # Fix the opera browser, see https://github.com/michael-lazar/ttrv/issues/476.
     # By default, opera will open a new tab in the current window, which is
     # what we want to do anyway.
     webbrowser.register('opera', None, webbrowser.BackgroundBrowser('opera'))
@@ -165,7 +165,7 @@ class LoadScreen(object):
     """
 
     EXCEPTION_MESSAGES = [
-        (exceptions.TVRError, '{0}'),
+        (exceptions.TTRVError, '{0}'),
         (praw.errors.OAuthException, 'OAuth Error'),
         (praw.errors.OAuthScopeRequired, 'Not logged in'),
         (praw.errors.LoginRequired, 'Not logged in'),

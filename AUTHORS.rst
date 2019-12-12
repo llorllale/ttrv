@@ -1,5 +1,5 @@
 ================
-TVR Contributors
+TTRV Contributors
 ================
 * `deepend <https://github.com/deepend-tildeclub>`_
 

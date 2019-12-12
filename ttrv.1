@@ -1,10 +1,10 @@
-.TH "TVR" "1" "June 03, 2019" "Version 1.27.0" "Usage and Commands"
+.TH "TTRV" "1" "June 03, 2019" "Version 1.27.0" "Usage and Commands"
 .SH NAME
-TVR - Terminal Viewer for Reddit
+TTRV - Terminal Viewer for Reddit
 .SH SYNOPSIS
-tvr [URL] [\-s SUBREDDIT]
+ttrv [URL] [\-s SUBREDDIT]
 .SH DESCRIPTION
-TVR (Terminal Viewer for Reddit) is a terminal interface to view and interact with reddit.
+TTRV (Terminal Viewer for Reddit) is a terminal interface to view and interact with reddit.
 .SH OPTIONS
 .TP
 \fBURL\fR
@@ -56,7 +56,7 @@ Remove any saved user data before launching
 
 .TP
 \fB\-\-copy\-config\fR
-Copy the default configuration to {HOME}/.config/tvr/tvr.cfg
+Copy the default configuration to {HOME}/.config/ttrv/ttrv.cfg
 
 .TP
 \fB\-\-copy\-mailcap\fR
@@ -89,31 +89,31 @@ Press \fBright\fR to view the selected submission and \fBleft\fR to return.
 Press \fB?\fR to open the help screen.
 .SH FILES
 .TP
-.BR $XDG_CONFIG_HOME/tvr/tvr.cfg
+.BR $XDG_CONFIG_HOME/ttrv/ttrv.cfg
 The configuration file can be used to customize default program settings.
 .TP
-.BR $XDG_DATA_HOME/tvr/refresh-token
+.BR $XDG_DATA_HOME/ttrv/refresh-token
 After you login to reddit, your most recent OAuth refresh token will be stored
 for future sessions.
 .TP
-.BR $XDG_DATA_HOME/tvr/history.log
+.BR $XDG_DATA_HOME/ttrv/history.log
 This file stores URLs that have been recently opened in order to
 visually highlight them as "seen".
 .SH ENVIRONMENT
 .TP
-.BR TVR_EDITOR
+.BR TTRV_EDITOR
 Text editor to use when editing comments and submissions. Will fallback to
 \fI$EDITOR\fR. 
 .TP
-.BR TVR_URLVIEWER
+.BR TTRV_URLVIEWER
 Url viewer to use to extract links from comments.  Requires a compatible
 program to be installed.
 .TP
-.BR TVR_BROWSER
+.BR TTRV_BROWSER
 Web browser to use when opening links. Will fallback to \fI$BROWSER\fR.
 .SH AUTHOR
 deepend <deepend@tilde.club> (2017).
 .SH BUGS
-Report bugs to \fIhttps://github.com/tildeclub/tvr/issues\fR
+Report bugs to \fIhttps://github.com/tildeclub/ttrv/issues\fR
 .SH LICENSE
 The MIT License (MIT)

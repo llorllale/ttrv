@@ -28,9 +28,9 @@ except ImportError:
 # references, it needs to be done before the webbrowser module is imported
 # for the first time.
 webbrowser_import_warning = ('webbrowser' in sys.modules)
-TVR_BROWSER, BROWSER = os.environ.get('TVR_BROWSER'), os.environ.get('BROWSER')
-if TVR_BROWSER:
-    os.environ['BROWSER'] = TVR_BROWSER
+TTRV_BROWSER, BROWSER = os.environ.get('TTRV_BROWSER'), os.environ.get('BROWSER')
+if TTRV_BROWSER:
+    os.environ['BROWSER'] = TTRV_BROWSER
 
 from . import docs
 from . import packages
@@ -50,8 +50,8 @@ _logger = logging.getLogger(__name__)
 
 
 # Pycharm debugging note:
-# You can use pycharm to debug a curses application by launching tvr in a
-# console window (python -m tvr) and using pycharm to attach to the remote
+# You can use pycharm to debug a curses application by launching ttrv in a
+# console window (python -m ttrv) and using pycharm to attach to the remote
 # process. On Ubuntu, you may need to allow ptrace permissions by setting
 # ptrace_scope to 0 in /etc/sysctl.d/10-ptrace.conf.
 # http://blog.mellenthin.de/archives/2010/10/18/gdb-attach-fails
@@ -68,7 +68,7 @@ def main():
 
     # Set the terminal title
     if os.getenv('DISPLAY'):
-        title = 'tvr {0}'.format(__version__)
+        title = 'ttrv {0}'.format(__version__)
         sys.stdout.write('\x1b]2;{0}\x07'.format(title))
         sys.stdout.flush()
 
@@ -150,8 +150,8 @@ def main():
     user_agent = docs.AGENT.format(version=__version__)
 
     debug_info = [
-        'tvr version: tvr {}'.format(__version__),
-        'tvr module path: {}'.format(os.path.abspath(__file__)),
+        'ttrv version: ttrv {}'.format(__version__),
+        'ttrv module path: {}'.format(os.path.abspath(__file__)),
         'python version: {}'.format(sys.version.replace('\n', ' ')),
         'python executable: {}'.format(sys.executable),
         'praw version: {}'.format(praw_info),
@@ -163,10 +163,10 @@ def main():
         ('EDITOR', os.getenv('EDITOR')),
         ('LANG', os.getenv('LANG')),
         ('PAGER', os.getenv('PAGER')),
-        ('TVR_BROWSER', TVR_BROWSER),
-        ('TVR_EDITOR', os.getenv('TVR_EDITOR')),
-        ('TVR_PAGER', os.getenv('TVR_PAGER')),
-        ('TVR_URLVIEWER', os.getenv('TVR_URLVIEWER')),
+        ('TTRV_BROWSER', TTRV_BROWSER),
+        ('TTRV_EDITOR', os.getenv('TTRV_EDITOR')),
+        ('TTRV_PAGER', os.getenv('TTRV_PAGER')),
+        ('TTRV_URLVIEWER', os.getenv('TTRV_URLVIEWER')),
         ('TERM', os.getenv('TERM')),
         ('VISUAL', os.getenv('VISUAL')),
         ('XDG_CONFIG_HOME', os.getenv('XDG_CONFIG_HOME')),
@@ -263,8 +263,8 @@ def main():
         exit_message = '\n'.join([
             debug_text,
             traceback.format_exc(),
-            'tvr has crashed. Please report this traceback at:',
-            'https://github.com/tildeclub/tvr/issues\n'])
+            'ttrv has crashed. Please report this traceback at:',
+            'https://github.com/tildeclub/ttrv/issues\n'])
         sys.stderr.write(exit_message)
         return 1  # General error exception code
     except KeyboardInterrupt:

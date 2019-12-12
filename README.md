@@ -1,5 +1,5 @@
 <h1 align="center">Tilde Terminal Reddit Viewer (TTRV)</h1>
-<p>Forked from Original source/development at: <a href="https://github.com/michael-lazar/rtv">RTV</p>
+<p>Forked from Original source/development at: <a href="https://github.com/michael-lazar/rtv">RTV</a></p>
 
 <p align="center">
 A text-based interface (TUI) to view and interact with Reddit from your terminal.<br>

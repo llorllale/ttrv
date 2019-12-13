@@ -39,15 +39,6 @@ $ cd ttrv/
 $ python setup.py install
 ```
 
-When receiving errors try installing the following additional packages:
-
-# Find python-setuptools in your package manager, e.g on Debian:
-$ apt install python-setuptools
-
-# Install pip wheel package:
-$ pip install wheel
-
-
 ### Windows
 
 TTRV is not supported on Windows, due to a lack of resources and interest. Sorry!

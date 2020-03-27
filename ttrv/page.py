@@ -206,6 +206,22 @@ class Page(object):
         self._move_cursor(1)
         self.clear_input_queue()
 
+    @PageController.register(Command('MOVE_NEXT_UNREAD'))
+    def move_next_unread(self):
+        """
+        Move the cursor to the next unread url.
+        """
+        self._move_cursor_to_unread(1)
+        self.clear_input_queue()
+
+    @PageController.register(Command('MOVE_PREV_UNREAD'))
+    def move_prev_unread(self):
+        """
+        Move the cursor to the previous unread url.
+        """
+        self._move_cursor_to_unread(-1)
+        self.clear_input_queue()
+
     @PageController.register(Command('PAGE_UP'))
     def move_page_up(self):
         """
@@ -862,6 +878,17 @@ class Page(object):
         # Note: ACS_VLINE doesn't like changing the attribute, so disregard the
         # redraw flag and opt to always redraw
         valid, redraw = self.nav.move(direction, len(self._subwindows))
+        if not valid:
+            self.term.flash()
+
+    def _move_cursor_to_unread(self, direction):
+        url_in_history = True
+        valid = True
+        while valid and url_in_history:
+            valid, redraw = self.nav.move(direction, len(self._subwindows))
+            if valid:
+                data = self.get_selected_item()
+                url_in_history = data['url_full'] in self.config.history
         if not valid:
             self.term.flash()
 

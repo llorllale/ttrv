@@ -39,6 +39,9 @@ except ImportError:
     from six.moves import html_parser
     unescape = html_parser.HTMLParser().unescape
 
+if sys.version_info[0:2] == (3, 8) and sys.platform == 'darwin':
+    from multiprocessing import set_start_method
+    set_start_method('fork')
 
 _logger = logging.getLogger(__name__)
 

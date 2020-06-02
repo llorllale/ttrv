@@ -50,7 +50,7 @@ setuptools.setup(
     long_description=long_description(),
     long_description_content_type='text/markdown',
     url='https://github.com/tildeclub/ttrv',
-    author='deepend (forked from RTV),
+    author='deepend (forked from RTV)',
     author_email='deepend@tilde.club',
     license='MIT',
     keywords='reddit terminal praw curses',

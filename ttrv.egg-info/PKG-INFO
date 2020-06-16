@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ttrv
-Version: 1.27.1
+Version: 1.27.2
 Summary: Tilde Terminal Reddit Viewer
 Home-page: https://github.com/tildeclub/ttrv
 Author: deepend (forked from RTV)
@@ -38,6 +38,14 @@ Description: <h1 align="center">Tilde Terminal Reddit Viewer (TTRV)</h1>
         </p>
         
         ## Installation
+        
+        ### PyPI package
+        
+        TTRV is available on [PyPI](https://pypi.python.org/pypi/ttrv/) and can be installed with pip:
+        
+        ```bash
+        $ pip install ttrv
+        ```
         
         ### From source
         

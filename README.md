@@ -49,7 +49,7 @@ $ python setup.py install
 
 ### Windows
 
-TTRV is not supported on Windows but you can enable Windows subsystem for Linux, download your preffered Linux distribution from Microsoft Store and access it from there.
+TTRV is not supported on Windows but you can enable Windows subsystem for Linux, download your preferred Linux distribution from Microsoft Store and access it from there.
 
 To open links on Edge, paste the line below to ``{HOME}/.bashrc`` 
 ```

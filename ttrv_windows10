@@ -1,0 +1,43 @@
+#  TTRV on Windows 10 Pro
+
+#  Step by step:
+	
+#	1) Windows key --> 'Control Panel' --> Programs --> Turn Windows feauters on or off.
+
+#	2) Locate Windows Subsystem for Linux on the list, enable it. Click OK.
+
+#	3) Wait until it is installed, reboot your PC.
+
+#	4) Open Store, download and install your preffered Linux distrobution.(I will use Debian)
+
+#	5) Open it with Windows key --> 'debian'.
+
+#	6) Set your new username & password.
+
+#	7) 'sudo apt-get update'
+
+#	8) 'sudo apt-get install git'
+
+#	9) 'sudo apt-get install python3'
+
+#	10) 'sudo apt-get install python3-venv'
+
+#	11) 'sudo apt-get install python3-pip'
+
+#	12) 'sudo git clone https://github.com/tildeclub/ttrv.git'
+	
+#	13) 'cd ttrv'
+
+#	14) 'sudo python3 -m venv venv'
+
+#	15) 'source venv/bin/activate'
+
+#	16) 'python3 -m pip install -r requirments.txt'
+
+#	17) 'deactivate'
+
+#	18) 'sudo python3 setup.py install'
+
+#	19) Open ~/.bashrc , (browser of your choice)paste:    export BROWSER='/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
+
+#	20) 'ttrv'   && ENJOY TTRV <3

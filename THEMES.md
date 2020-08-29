@@ -25,7 +25,7 @@ Color support on modern terminals can be split into 4 categories:
 
 <p align="center">
 <img alt="terminal colors" src="resources/terminal_colors.png"/>
-<br><i>The 256 terminal color codes, image from <a href=https://github.com/eikenb/terminal_colors>https://github.com/eikenb/terminal_colors</a></i>
+<br><i>The 256 terminal color codes, image from <a href=https://github.com/eikenb/terminal-colors>https://github.com/eikenb/terminal-colors</a></i>
 </p>
 
 The 16 system colors, along with the default foreground and background,

@@ -1,6 +1,7 @@
 import re
 import logging
 import mimetypes
+import json
 
 import requests
 from bs4 import BeautifulSoup
@@ -461,6 +462,24 @@ class WorldStarHipHopMIMEParser(BaseMIMEParser):
         return url, None
 
 
+class RedGifsParser(BaseMIMEParser):
+    """
+    Extract from application/ld+json
+    """
+    pattern = re.compile(r'https?://(www\.)?redgifs\.com/watch/.+$')
+
+    @staticmethod
+    def get_mimetype(url):
+        page = requests.get(url)
+        soup = BeautifulSoup(page.content, 'html.parser')
+        tag = soup.find('script', attrs={'type': 'application/ld+json'})
+        if tag:
+            ld_json = json.loads(tag.text)
+            return ld_json['video']['contentUrl'], 'video/mp4'
+
+        return url, None
+
+
 # Parsers should be listed in the order they will be checked
 parsers = [
     StreamjaMIMEParser,
@@ -482,4 +501,5 @@ parsers = [
     MakeamemeMIMEParser,
     WorldStarHipHopMIMEParser,
     GifvMIMEParser,
+    RedGifsParser,
     BaseMIMEParser]

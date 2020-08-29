@@ -15,7 +15,7 @@ import requests
 _filepath = os.path.dirname(os.path.relpath(__file__))
 
 FILENAME = os.path.abspath(os.path.join(_filepath, '..', 'AUTHORS.rst'))
-URL = "https://api.github.com/repos/tildeclub/ttrv/contributors?per_page=1000"
+URL = "https://api.github.com/repos/deepend-tildeclub/ttrv/contributors?per_page=1000"
 HEADER = """\
 ================
 TTRV Contributors

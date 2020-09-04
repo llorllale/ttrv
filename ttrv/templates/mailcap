@@ -1,5 +1,5 @@
 # Example mailcap file for Terminal Viewer for Reddit
-# https://github.com/deepend-tildeclub/ttrv/
+# https://github.com/tildeclub/ttrv/
 #
 # Copy the contents of this file to {HOME}/.mailcap, or point to it using $MAILCAPS
 # Then launch TTRV using the --enable-media flag. All shell commands defined in

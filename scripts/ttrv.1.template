@@ -42,6 +42,6 @@ Web browser to use when opening links. Will fallback to \fI$BROWSER\fR.
 .SH AUTHOR
 Michael Lazar <lazar.michael22@gmail.com> (2017).
 .SH BUGS
-Report bugs to \fIhttps://github.com/deepend-tildeclub/ttrv/issues\fR
+Report bugs to \fIhttps://github.com/tildeclub/ttrv/issues\fR
 .SH LICENSE
 {license}

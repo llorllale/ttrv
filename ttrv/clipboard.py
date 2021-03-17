@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import os
 import sys
 import subprocess
 
@@ -31,8 +32,13 @@ def copy_osx(text):
 def copy_linux(text):
 
     def get_command_name():
-        # Checks for the installation of xsel or xclip
-        for cmd in ['xsel', 'xclip']:
+        # Checks for the installation of wl-copy, or xsel or xclip
+        # depending if WAYLAND_DISPLAY is set
+        if 'WAYLAND_DISPLAY' in os.environ:
+            cmds = ['wl-copy']
+        else:
+            cmds = ['xsel', 'xclip']
+        for cmd in cmds:
             cmd_exists = subprocess.call(
                 ['which', cmd],
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE) == 0
@@ -42,7 +48,8 @@ def copy_linux(text):
 
     cmd_args = {
         'xsel': ['xsel', '-b', '-i'],
-        'xclip': ['xclip', '-selection', 'c']}
+        'xclip': ['xclip', '-selection', 'c'],
+        'wl-copy': ['wl-copy']}
     cmd_name = get_command_name()
 
     if cmd_name is None:

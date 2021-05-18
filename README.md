@@ -1,3 +1,5 @@
+<b>Sorry do not have time to work on this project. I am going to archive it.  I have over estimated the tildeverse community interest in seeing this project continue.  Thanks to everyone that has put some time in to offering up some PR's.</b>
+
 <h1 align="center">Tilde Terminal Reddit Viewer (TTRV)</h1>
 <p>Forked from Original source/development at: <a href="https://github.com/michael-lazar/rtv">RTV</a></p>
 

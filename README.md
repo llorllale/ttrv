@@ -38,6 +38,9 @@ $ git clone https://github.com/tildeclub/ttrv.git
 $ cd ttrv/
 $ python setup.py install
 ```
+> **IMPORTANT**: you will need to configure appropriate OAuth2 client ID and secrets in [settings](#settings).
+> [Request one from reddit](https://old.reddit.com/prefs/apps) (client_id is the opaque string in the upper left corner,
+> below your app's name, while the client_secret is the value of `Secret`).
 
 ### Windows
 

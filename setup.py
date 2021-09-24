@@ -46,11 +46,11 @@ def long_description():
 setuptools.setup(
     name='ttrv',
     version=version,
-    description='A simple terminal viewer for Reddit (Terminal Viewer for Reddit)',
+    description='Tilde Terminal Reddit Viewer',
     long_description=long_description(),
     long_description_content_type='text/markdown',
     url='https://github.com/tildeclub/ttrv',
-    author='Michael Lazar',
+    author='deepend (forked from RTV)',
     author_email='deepend@tilde.club',
     license='MIT',
     keywords='reddit terminal praw curses',
